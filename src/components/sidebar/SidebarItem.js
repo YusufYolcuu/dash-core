@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { CBadge } from "@coreui/react";
 
-export default function AppSidebarNav({ items }) {
+export default function SidebarItem({ items }) {
   const navLink = (name, icon, badge) => {
     return (
       <>
@@ -64,6 +64,6 @@ export default function AppSidebarNav({ items }) {
   );
 }
 
-AppSidebarNav.propTypes = {
+SidebarItem.propTypes = {
   items: PropTypes.arrayOf(PropTypes.any).isRequired,
 };

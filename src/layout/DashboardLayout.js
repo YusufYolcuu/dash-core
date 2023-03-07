@@ -6,7 +6,7 @@ import {
   AppHeader,
 } from "../components/index";
 
-const HomeLayout = () => {
+const DashboardLayout = () => {
   return (
     <div>
       <AppSidebar />
@@ -21,4 +21,4 @@ const HomeLayout = () => {
   );
 };
 
-export default HomeLayout;
+export default DashboardLayout;
