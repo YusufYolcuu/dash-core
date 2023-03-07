@@ -1,24 +1,21 @@
 import React, { Suspense } from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
-import HomeLayout from "./layout/HomeLayout";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 
-// import "./scss/style.scss";
-
+const HomeLayout = React.lazy(() => import("./layout/HomeLayout"));
 const Login = React.lazy(() => import("./views/pages/login/Login"));
-// const Register = React.lazy(() => import("./views/pages/register/Register"));
+
+import "./scss/style.scss";
 
 function App() {
   return (
-    <HashRouter>
-      {
-        <Suspense>
-          <Routes>
-            <Route path="/" element={<HomeLayout />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </Suspense>
-      }
-    </HashRouter>
+    <Suspense>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeLayout />} />
+          <Route path="login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 
