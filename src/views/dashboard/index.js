@@ -1,7 +1,12 @@
 import React from "react";
+import AppStatics from "../../components/dashboard/statics";
 
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <>
+      <AppStatics />
+    </>
+  );
 };
 
 export default Dashboard;
