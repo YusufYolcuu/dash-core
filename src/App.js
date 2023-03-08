@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import DashboardLayout from "./layout/DashboardLayout";
-const Login = React.lazy(() => import("./views/pages/login/Login"));
-const Register = React.lazy(() => import("./views/pages/register/Register"));
+const Login = React.lazy(() => import("./pages/login/Login"));
+const Register = React.lazy(() => import("./pages/register/Register"));
 
 import "./scss/style.scss";
 
