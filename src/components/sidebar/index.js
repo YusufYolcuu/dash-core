@@ -4,7 +4,7 @@ import { CSidebar, CSidebarBrand, CSidebarNav } from "@coreui/react";
 import SidebarItem from "./SidebarItem";
 
 import SimpleBar from "simplebar-react";
-import navigation from "../../_nav";
+import navigation from "../../views/_nav";
 
 const AppSidebar = () => {
   const dispatch = useDispatch();

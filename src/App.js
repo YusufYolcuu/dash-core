@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
       <Suspense>
         <Routes>
-          <Route path="/" element={<DashboardLayout />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="*" name="Home" element={<DashboardLayout />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
