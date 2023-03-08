@@ -1,9 +1,22 @@
 import React from "react";
-import { CContainer, CHeader, CHeaderToggler } from "@coreui/react";
+import { NavLink } from "react-router-dom";
+
+import {
+  CContainer,
+  CHeader,
+  CHeaderBrand,
+  CHeaderDivider,
+  CHeaderNav,
+  CHeaderToggler,
+  CNavLink,
+  CNavItem,
+} from "@coreui/react";
+
 import CIcon from "@coreui/icons-react";
 
-import { cilMenu } from "@coreui/icons";
+import { cilBell, cilEnvelopeOpen, cilList, cilMenu } from "@coreui/icons";
 import { useSelector, useDispatch } from "react-redux";
+import { logo } from "../assets/brand/logo";
 
 const AppHeader = () => {
   const dispatch = useDispatch();
@@ -18,7 +31,43 @@ const AppHeader = () => {
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
-        <h1>Header</h1>
+        <CHeaderBrand className="mx-auto d-md-none" to="/">
+          <CIcon icon={logo} height={48} alt="Logo" />
+        </CHeaderBrand>
+
+        <CHeaderNav className="d-none d-md-flex me-auto">
+          {/* <CNavItem>
+            <CNavLink to="/dashboard" component={NavLink}>
+              Dashboard
+            </CNavLink>
+          </CNavItem> */}
+          <CNavItem>
+            <CNavLink href="#">Users</CNavLink>
+          </CNavItem>
+          <CNavItem>
+            <CNavLink href="#">Settings</CNavLink>
+          </CNavItem>
+        </CHeaderNav>
+        <CHeaderNav>
+          <CNavItem>
+            <CNavLink href="#">
+              <CIcon icon={cilBell} size="lg" />
+            </CNavLink>
+          </CNavItem>
+          <CNavItem>
+            <CNavLink href="#">
+              <CIcon icon={cilList} size="lg" />
+            </CNavLink>
+          </CNavItem>
+          <CNavItem>
+            <CNavLink href="#">
+              <CIcon icon={cilEnvelopeOpen} size="lg" />
+            </CNavLink>
+          </CNavItem>
+        </CHeaderNav>
+        {/* <CHeaderNav className="ms-3">
+          <AppHeaderDropdown />
+        </CHeaderNav> */}
       </CContainer>
     </CHeader>
   );
